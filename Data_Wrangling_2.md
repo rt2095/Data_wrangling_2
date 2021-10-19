@@ -30,3 +30,26 @@ library(rvest)
 ``` r
 library(httr)
 ```
+
+### NSDUH Data
+
+``` r
+url = "http://samhda.s3-us-gov-west-1.amazonaws.com/s3fs-public/field-uploads/2k15StateFiles/NSDUHsaeShortTermCHG2015.htm"
+
+drug_use_html = read_html(url)
+```
+
+``` r
+drug_use_html %>%
+  html_table() %>%
+  first() %>%
+  slice(-1) %>% view
+```
+
+### Star Wars
+
+``` r
+sw_url = "https://www.imdb.com/list/ls070150896/"
+
+sw_html = read_html(sw_url)
+```
